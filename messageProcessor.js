@@ -10,7 +10,10 @@
 var Processor = {
     process: (msg) => {
         //msg should be the JSON with attr src, from, val
-        Processor[msg.from](msg.val);
+        try {
+            Processor[msg.from](msg.val);
+        } catch (e) {}
+        
     },
     "DIMMER": function (val) {},
     "FONT_CONTROL": function (val) {}

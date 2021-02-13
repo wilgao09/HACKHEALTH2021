@@ -6,7 +6,9 @@ let Dimmer = {
     inputElement: null,
     sendUpdate: () => {
         let currVal = Dimmer.inputElement.checked
-        sendJSONToTab({src:EXT_NAME,from:"DIMMER", val:currVal})
+        let msg = {src:EXT_NAME,from:"DIMMER", val:currVal}
+        port.postMessage(msg)
+        sendJSONToTab(msg)
     },
 }
 
@@ -14,11 +16,11 @@ let FontControl = {
     inputElement: null,
     sendUpdate: () => {
         let currVal = FontControl.inputElement.value
-        sendJSONToTab({src:EXT_NAME,from:"FONT_CONTROL", val:currVal})
+        let msg = {src:EXT_NAME,from:"FONT_CONTROL", val:currVal}
+        port.postMessage(msg)
+        sendJSONToTab(msg)
     }
 }
-
-
 
 
 
@@ -39,6 +41,16 @@ function init() {
 
 
 }
+
+
+
+var port = chrome.extension.connect({
+    name: "When is this relevant"
+});
+
+port.onMessage.addListener(function(msg) {
+    console.log("message recieved" + msg);
+});
 
 
 

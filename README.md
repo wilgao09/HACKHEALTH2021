@@ -8,7 +8,7 @@ HackHealth2021 repo
  - ``` backgruond.js ``` should be the only background script and is responsible for JS injection; you can add more scritps to inject, but right now, it just injects <code> contentListener.js </code> and <code> messageProcessor.js </code>
 
  
-### messageProcessor.js
+### contentListener.js
 
  - includes the main message receiver 
  - Holds the CSS_OBJECT object: the CSS_OBJECT object is just there to organize all the CSS modification related methods and variables; ALL modifications should be through methods
@@ -16,3 +16,6 @@ HackHealth2021 repo
    - editRule takes an ID and a value; the value MUST be a valid CSS block (e.g. ```body { color: red }```)
    - editing rules DOES NOT automatically implement the rules; each edit should be succeeded by a CSS_OBJECT.load()
 
+### messageProcessor.js
+
+ - Holds <code> Processor </code> variable; Processor should hold attributes with names equivalent to the names possible in the <code> from </code> field in a message (e.g. if we have a message that has <code> from </code> value <code> DIMMER </code>, we should have a attribute <code> DIMMER </code> in our <code> Processor </code> that takes in a parameter <code> val </code> )
