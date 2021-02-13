@@ -34,7 +34,7 @@ function makeDim(){
         node.style.background = new_bg
     })
 }
-function makeDim(){
+function unMakeDim(){
     let bg = document.body.style.backgroundColor
     let new_bg = pSBC(0.5,bg)
     document.body.style.backgroundColor = new_bg
