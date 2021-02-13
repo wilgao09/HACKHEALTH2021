@@ -26,12 +26,14 @@ Processor.FONT_CONTROL = (val) => {
 }
 
 Processor.DIMMER = (val) => {
-    console.log(val)
-    if (val) {
-        console.log("TIME TO DIM")
+    if (val && !CSS_OBJECT.isDark) {
+        
         makeDim()
-    } else {
+        CSS_OBJECT.isDark = true;
+    } 
+    if (!val && CSS_OBJECT.isDark) {
         makeUnDim()
+        CSS_OBJECT.isDark = false;
     }
 
     

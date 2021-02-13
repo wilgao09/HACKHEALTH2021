@@ -27,7 +27,9 @@ var CSS_OBJECT = {
     STYLE_TAG_ID: "myExtensionsStyleTagName",
     load: () => {},
     reset: () =>{},
-    editRule: () => {}
+    editRule: () => {},
+
+    isDark: false
 }
 
 

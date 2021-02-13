@@ -1,22 +1,43 @@
+
+
+function getColors() {
+    document.body.setAttribute("data-originalColor",window.getComputedStyle(document.body ,null).getPropertyValue('background-color'))
+    document.querySelectorAll('*').forEach(function(node){
+        node.setAttribute("data-originalColor", window.getComputedStyle(document.body ,null).getPropertyValue('background-color'))
+    })
+}
+
+var darkened = false;
+
+
 function makeDim(){
-    let bg = window.getComputedStyle( document.body ,null).getPropertyValue('background-color'); 
-    let new_bg = pSBC(-0.5, bg)
+
+    if (!darkened) {getColors();darkened = true}
+    //let bg = window.getComputedStyle(document.body ,null).getPropertyValue('background-color'); 
+    //document.body.setAttribute("data-originalColor",window.getComputedStyle(document.body ,null).getPropertyValue('background-color'))
+    
+    let new_bg = pSBC(-0.55, document.body.getAttribute("data-originalColor"))
+    
     document.body.style.backgroundColor = new_bg
     document.querySelectorAll('*').forEach(function(node){
-        bg = window.getComputedStyle( node ,null).getPropertyValue('background-color');  
-        new_bg = pSBC(-0.5, bg)
+        //bg = window.getComputedStyle(node ,null).getPropertyValue('background-color');  
+        //node.setAttribute("data-originalColor", window.getComputedStyle(document.body ,null).getPropertyValue('background-color'))
+        new_bg = pSBC(-0.55, node.getAttribute("data-originalColor"))
+        console.log(new_bg)
+        //node.originalColor = bg;
+        
         node.style.background = new_bg
     })
 }
 
 function makeUnDim(){
-    let bg = window.getComputedStyle( document.body ,null).getPropertyValue('background-color'); 
-    let new_bg = pSBC(0.5, bg)
-    document.body.style.backgroundColor = new_bg
+    // let bg = window.getComputedStyle(document.body ,null).getPropertyValue('background-color'); 
+    // let new_bg = pSBC(0.5, bg)
+    document.body.style.backgroundColor = document.body.getAttribute("data-originalColor")
     document.querySelectorAll('*').forEach(function(node){
-        bg = window.getComputedStyle( node ,null).getPropertyValue('background-color');  
-        new_bg = pSBC(0.5, bg)
-        node.style.background = new_bg
+        //bg = window.getComputedStyle( ode ,null).getPropertyValue('background-color');  
+        //new_bg = pSBC(0.5, bg)
+        node.style.background = node.getAttribute("data-originalColor")
     })
 }
 
