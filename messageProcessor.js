@@ -26,6 +26,9 @@ Processor.DIMMER = (val) =>{
     if(typeof bool=='undefined')bool=true;
     document.getElementById('dimmer').style.display=(bool?'block':'none');
 }
+	function checkDim(){
+		determine = !determine;
+	}
     //Request user input to determine brightness option
 var shade = prompt("Do you have vision impairments?");
 var determine;
