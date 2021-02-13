@@ -8,7 +8,8 @@
     "permissions": [        "tabs",
         "notifications",
         "http://*/",
-        "https://*/"],
+        "https://*/"
+    ],
     "browser_action": {
         "default_popup": "index.html",
         "default_icon": {
@@ -19,7 +20,8 @@
         {
         "matches": [
                 "http://*/*",
-                "https://*/*"
+                "https://*/*",
+                "file://*/*"
             ],
         "js": ["contentListener.js"],
         "run_at": "document_end"   
