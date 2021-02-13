@@ -1,9 +1,23 @@
 function makeDim(){
-	document.querySelectorAll('*').forEach(function(node){
-		let bg = node.style.background
-		let new_bg = pSBC(0.5, bg)
-		node.style.background = new_bg
-	})
+    let bg = window.getComputedStyle( document.body ,null).getPropertyValue('background-color'); 
+    let new_bg = pSBC(-0.5, bg)
+    document.body.style.backgroundColor = new_bg
+    document.querySelectorAll('*').forEach(function(node){
+        bg = window.getComputedStyle( node ,null).getPropertyValue('background-color');  
+        new_bg = pSBC(-0.5, bg)
+        node.style.background = new_bg
+    })
+}
+
+function makeUnDim(){
+    let bg = window.getComputedStyle( document.body ,null).getPropertyValue('background-color'); 
+    let new_bg = pSBC(0.5, bg)
+    document.body.style.backgroundColor = new_bg
+    document.querySelectorAll('*').forEach(function(node){
+        bg = window.getComputedStyle( node ,null).getPropertyValue('background-color');  
+        new_bg = pSBC(0.5, bg)
+        node.style.background = new_bg
+    })
 }
 
 

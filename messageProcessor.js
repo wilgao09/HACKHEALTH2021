@@ -25,6 +25,17 @@ Processor.FONT_CONTROL = (val) => {
     CSS_OBJECT.load()
 }
 
+Processor.DIMMER = (val) => {
+    console.log(val)
+    if (val) {
+        console.log("TIME TO DIM")
+        makeDim()
+    } else {
+        makeUnDim()
+    }
+
+    
+}
 
 var PAGE_FONT = (font, isImportant=true) => {return(`
     body * {
