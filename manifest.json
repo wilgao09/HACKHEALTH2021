@@ -3,14 +3,28 @@
     "version": "1.0",
     "description": "Name",
     "background": {
-        "scripts": ["index.js"]
-      },
+        "scripts": ["background.js"]
+    },
+    "permissions": [        "tabs",
+        "notifications",
+        "http://*/",
+        "https://*/"],
     "browser_action": {
         "default_popup": "index.html",
         "default_icon": {
         },
         "default_title": "Where do THESE words go????"
     },
+    "content_scripts": [
+        {
+        "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+        "js": ["contentListener.js"],
+        "run_at": "document_end"   
+        }
+    ], 
     "icons": {
     },
     "manifest_version": 2
