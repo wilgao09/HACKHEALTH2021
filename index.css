@@ -1,38 +1,122 @@
 body {
-    width: 300px;
-    height: 10vh
+  width: 200px;
+  height: 10vh;
+  background-color: #282828;
+  color: #c0c0c0;
+  font-size: 30px;
+  padding: 10px;
 }
 input {
-    display:inline
+  display: inline;
 }
-.dropbtn{
-	background-color:#3498DB;
-	color: white;
-	padding:16px;
-	font-size:16px;
-	border:none;
-	cursor:pointer;
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
-.dropbtn:hover,.dropbtn:focus{
-	background-color:#2980B9;
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #2980b9;
 }
-.dropdown{
-	position: relative;
-	display: inline-block;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
-.dropdown-content{
-	display:none;
-	position: absolute;
-	background-color:#f1f1f1;
-	min-width:160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
-.dropdown-content a{
-	color:black;
-	padding: 12px 16px;
-	text-decoration:none;
-	display:block;
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
-.dropdown-content a:hover{background-color:#ddd;}
-.show {display:block;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.show {
+  display: block;
+}
+
+.option {
+  margin: 20px 0;
+}
+
+#logo {
+  width: 100%;
+}
+
+#fontval option {
+  font-size: 30px;
+}
+
+/* SWITCH CODE*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

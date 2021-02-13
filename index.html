@@ -2,23 +2,28 @@
 <html>
   <head>
     <title>Where did the title go!?</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div id="container">
-      <div>
-        <label for="dimval">Dim Page:</label>
-        <input type="checkbox" id="dim" />
+      <img src="assets/warmify-full.png" id="logo" />
+      <div class="option">
+        <label for="dimval">Dim Page</label>
+        <label class="switch">
+          <input type="checkbox" id="dim" />
+          <span class="slider round"></span>
+        </label>
       </div>
 
-      <div>
-        <label for="fontval">Font:</label>
+      <div class="option">
+        <label for="fontval">Font</label>
         <select name="Font" id="fontval">
           <option value="default">Website Default</option>
-          <option value='"Comic Sans MS", "Comic Sans", cursive'>Comic Sans</option>
+          <option value='"Comic Sans MS", "Comic Sans", cursive'>
+            Comic Sans
+          </option>
         </select>
       </div>
-      <input type="button" value="Reload" />
-
       <script src="popupListener.js"></script>
       <!-- <script src="dimmer.js"></script> -->
 
