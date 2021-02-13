@@ -19,34 +19,31 @@ var Processor = {
     "FONT_CONTROL": function (val) {}
 }
 
-Processor.DIMMER = (val) =>{
-    //Function declaration to dim screen based on boolean value
-	function dim(bool)
-	{
-    if(typeof bool=='undefined')bool=true;
-    document.getElementById('dimmer').style.display=(bool?'block':'none');
-}
-	function checkDim(){
-		determine = !determine;
-	}
-    //Request user input to determine brightness option
-var shade = prompt("Do you have vision impairments?");
-var determine;
-if(shade == "yes"|| shade == "Yes"){
-	determine = true;
-}else{
-	determine=false;
-}
-    //Pass user choice to screen.
-dim(determine);
-}
-
 Processor.FONT_CONTROL = (val) => {
     var rawCSS = PAGE_FONT(val);
     CSS_OBJECT.editRule("globalFont",rawCSS);
     CSS_OBJECT.load()
 }
-
+function makeDim(){
+    let bg = document.body.style.backgroundColor
+    let new_bg = pSBC(-0.5,bg)
+    document.body.style.backgroundColor = new_bg
+    document.querySelectorAll('*').forEach(function(node){
+        bg = node.style.background
+        new_bg = pSBC(-0.5,bg)
+        node.style.background = new_bg
+    })
+}
+function makeDim(){
+    let bg = document.body.style.backgroundColor
+    let new_bg = pSBC(0.5,bg)
+    document.body.style.backgroundColor = new_bg
+    document.querySelectorAll('*').forEach(function(node){
+        bg = node.style.background
+        new_bg = pSBC(0.5,bg)
+        node.style.background = new_bg
+    })
+}
 Processor.DIMMER = (val) => {
     console.log(val)
     if (val) {
