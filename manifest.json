@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "HealthHack Project Name",
     "version": "1.0",
     "description": "Name",
@@ -31,3 +32,27 @@
     },
     "manifest_version": 2
 }
+=======
+  "name": "HealthHack Project Name",
+  "version": "1.0",
+  "description": "Name",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": ["tabs", "notifications", "http://*/", "https://*/"],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": {},
+    "default_title": "Where do THESE words go????"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["contentListener.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {},
+  "manifest_version": 2
+}
+>>>>>>> 832664799b6e38a1ed4c90d86571d0f71b7843fb
