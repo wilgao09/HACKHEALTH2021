@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Where did the title go!? </title>
-        <style>
-            body {
-                width: 300px;
-                height: 10vh
-            }
-            input {
-                display:inline
-            }
-            
-        </style>
-    </head>
-    <body>
-        <div>
-            <div>
-                Dim By: <input type="range" id="dimval"/>
-            </div>
-        </div>
+  <head>
+    <title>Where did the title go!?</title>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <label for="dimval">Dim Page:</label>
+        <input type="checkbox" id="dimval" />
+      </div>
 
-    </body>
-
+      <div>
+        <label for="fontval">Font:</label>
+        <select name="Font" id="fontval">
+          <option value="website-default">Website Default</option>
+        </select>
+      </div>
+      <input type="button" value="Reload" />
+    </div>
+  </body>
 </html>

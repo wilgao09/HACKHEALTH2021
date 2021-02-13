@@ -1,17 +1,22 @@
 {
-    "name": "HealthHack Project Name",
-    "version": "1.0",
-    "description": "Name",
-    "background": {
-        "scripts": ["index.js"]
-      },
-    "browser_action": {
-        "default_popup": "index.html",
-        "default_icon": {
-        },
-        "default_title": "Where do THESE words go????"
-    },
-    "icons": {
-    },
-    "manifest_version": 2
+  "name": "HealthHack Project Name",
+  "version": "1.0",
+  "description": "Name",
+  "background": {
+    "scripts": ["index.js"]
+  },
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": {},
+    "default_title": "Where do THESE words go????"
+  },
+  "icons": {},
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["index.js"]
+    }
+  ],
+  "manifest_version": 2
 }
